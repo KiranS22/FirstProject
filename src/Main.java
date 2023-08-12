@@ -118,7 +118,7 @@ public class Main {
 
 }
 
-// Tasks:
+// Tasks to complete:
 //1. Explore the difference between pre-inc & post-inc
 //2. Explore all string methods
 //3. Write a program that finds the sum of all numbers that are odd, between 100 & 500.
