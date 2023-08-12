@@ -113,6 +113,39 @@ public class Main {
 
 
 
+//         Sum odd numbers between 100 and 500
+        int min = 100;
+        int sum = 0;
+        for (int p = min; p<500; p++){
+            if(p%2 != 0){
+                 sum = sum + p;
+
+            }
+
+
+        }
+        String anotherString = "The quick brown fox jumped over the lazy dog";
+        int vowelCount = 0;
+
+        for (int m = 0; m < anotherString.length(); m++) {
+            char currentChar = anotherString.charAt(m);
+            String vowels = "AEIOUaeiou";
+
+            if (vowels.contains(String.valueOf(currentChar))) {
+                ++vowelCount;
+            }
+        }
+
+        System.out.println("Vowel Count " + " "+ vowelCount);
+
+
+        int num = 10;
+        System.out.print("Factors of " + num + " are: ");
+        for (int z = 1; z <= num; z++) {
+            if (num % z == 0) {
+                System.out.print(z + " ");
+            }
+        }
 
     }
 
