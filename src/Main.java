@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -7,6 +9,48 @@ import java.util.Scanner;
 /* In Java regardless of the methods that are created before it, the main method will always run first. Inside the main method is where we call other methords
 **/
 public class Main {
+    public static  int findPositiveSum(int[] arr1){
+        int total1 = 0;
+        for (int i = 0; i <arr1.length; i++) {
+            int value = arr1[i];
+            if(value>0){
+                total1 += value;
+            }
+
+
+
+        }
+        return  total1;
+
+    }
+    public static int countAs(String[] stringArray1) {
+        int aCounter = 0;
+
+        for (String word : stringArray1) {
+            for (int i = 0; i < word.length(); i++) {
+                if (word.charAt(i) == 'a' ||word.charAt(i) == 'A' ) {
+                    aCounter++;
+                }
+            }
+        }
+
+        return aCounter;
+    }
+
+
+
+
+    public static int findMAx(int[] arr2){
+        int max = arr2[0];
+        for (int i = 0; i <arr2.length; i++) {
+            if(arr2[i]> max){
+              max = arr2[i];
+            }
+
+        }
+        return max;
+    }
+
     public static  int  display(int num ){
     return num;
     }
@@ -26,6 +70,15 @@ public class Main {
 
         }
         return result;
+    }
+    public static int nestedArraySum(int[][] nestedArray) {
+        int nestedTotal = 0;
+        for (int i = 0; i < nestedArray.length; i++) {
+            for (int j = 0; j < nestedArray[i].length; j++) {
+                nestedTotal += nestedArray[i][j];
+            }
+        }
+        return nestedTotal;
     }
     public static void main(String[] args){
 
@@ -237,20 +290,37 @@ String[] countries = {"UK","Japan","Spain"};
         int[] someArray = {1, 2, 3, 4};
         System.out.println(sumArray(someArray));
 
+        int[] nums = {1,-3, 40, 50, -100, -2};
+        System.out.println("find positive nums sum:  "+ findPositiveSum(nums));
+        System.out.println("max in mums: " + findMAx(nums));
+
+         String[] names = {"John", "Robert", "Alice", "Vanessa", "Steven" };
+        System.out.println("Number of a's  in mames: " + countAs(names));
+
+        int factoralToFind = 5;
+        int factorial = findFact(factoralToFind);
+        System.out.println("Factorial of " + number + " is: " + factorial);
+        int[][] twoD = {{1,2,3,4}, {4,5,4,5}, {12,3,4,1}, {-10,4,5,3}};
+
+        System.out.println("Some of nested array: " + nestedArraySum(twoD));
+
+    }
+
+    public static int findFact(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * findFact(n - 1);
+        }
     }
 
 }
 
-//1. int[] nums = {1,-3, 40, 50, -100, -2};
-//create a function findPositiveSum() that takes in the array and returns the sum of positive numbers.
-//2. Create a function findMAx() that returns the max value of the nums array
-//3. String[] names = {"John", "Robert", "Alice", "Vanessa", "Steven" };
-//Write a program that counts 'a' character in the whole array. print the count
-//4. Create a function called findFact() that takes in a number and returns the factorial
-//value 4: 4 x 3 x 2 x 1 = 24
-//value 5: 120
 
-//5. Find the total of a two dimensional Array. int[][] twoD = {{1,2,3,4}, {4,5,4,5}, {12,3,4,1}, {-10,4,5,3}} //4 x 4
+
+
+
+
 
 
 
