@@ -1,7 +1,34 @@
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+
+
+/* In Java regardless of the methods that are created before it, the main method will always run first. Inside the main method is where we call other methords
+**/
 public class Main {
+    public static  int  display(int num ){
+    return num;
+    }
+    public static  int  addNums(int num1 , int num2 ){
+        return num1 + num2;
+    }
+    public static  int lengthOfString (String str){
+        return  str.length();
+
+    }
+    public static  int sumArray (int[] arr){
+        int result = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int num = arr[i];
+             result += num;
+
+
+        }
+        return result;
+    }
     public static void main(String[] args){
+
 //  printing things to the console
 //        sout is shortcut for multiline print
         System.out.println("Hello");
@@ -62,12 +89,12 @@ public class Main {
             System.out.println(i);
         };
 
-//        While loop
-        int j = 0;
-        while(j<=8){
-            System.out.println("Hello");
-            j++;
-        };
+////        While loop
+//        int j = 0;
+//        while(j<=8){
+//            System.out.println("Hello");
+//            j++;
+//        };
 //         strings and string methods
 
         String  someString = "Hello I am coding in Java ";
@@ -140,23 +167,90 @@ public class Main {
 
 
         int num = 10;
-        System.out.print("Factors of " + num + " are: ");
+        System.out.println("Factors of " + num + " are: ");
         for (int z = 1; z <= num; z++) {
             if (num % z == 0) {
-                System.out.print(z + " ");
+                System.out.println(z + " ");
             }
         }
+
+        //-----------------------------------------------------------------------------------------------------------------------
+        int[] numbersArr ={1,2,5,7,9, 10};
+//        Array methods
+        System.out.println("Length of numbers array:" + numbersArr.length); // finds the length opf the array
+
+        for (int i = 0; i < numbersArr.length; i++) {
+            if(numbersArr[i] % 2 == 0){
+                System.out.println(" Even Numbers inside loop:"+numbersArr[i]);
+
+            }
+
+        }
+
+for(int item: numbersArr){
+            System.out.println("Item inside for each" + item);   //Loops over the whole array accessing index and current item is not possible here
+        }
+String[] countries = {"UK","Japan","Spain"};
+        for (String country: countries) {
+            System.out.println("Length of country name: "+ country.length());
+        }
+
+//         2D arrays in Java
+//        Creating a 2d array
+
+        int[][] my2dArr  = {{1,2,3}, {4,5,6}};
+        System.out.println("first index of 2d array: " + my2dArr[0][0]);
+
+        for (int i = 0; i <my2dArr.length ; i++) {
+            for (int j = 0; j < my2dArr[i].length; j++) {
+                System.out.println("Every value in nested array: " + my2dArr[i][j] + ",i: " + i + ",j: " + j); // inner loop is completed before the outer loop upddates its index value
+
+            }
+
+        }
+
+//         Accepting input from a user (via command line)
+     Scanner userInput = new Scanner(System.in); // creating a new instance of the scanner class
+//        System.out.println("Please enter a number: ");
+//        int userNumber1 = userInput.nextInt();
+//        System.out.println("Please  enter another number: ");
+//        int userNumber2 = userInput.nextInt();
+//        int addMe = userNumber1 + userNumber2;
+//        System.out.println(addMe);
+
+//        System.out.println("Enter a word to find the length: ");
+//        String userString = userInput.next();
+//        System.out.println("The lent of your word is: " + userString.length());
+
+//        calling display method
+        int returnedNum = display(12);
+        System.out.println("Number returned from display method: " + returnedNum);
+
+        int addResult = addNums(3, 5);
+        System.out.println("result from adding nums" + addResult);
+
+
+
+         int strLength =lengthOfString("I am a string");
+        System.out.println("string length " + strLength);
+
+        int[] someArray = {1, 2, 3, 4};
+        System.out.println(sumArray(someArray));
 
     }
 
 }
 
-// Tasks to complete:
-//1. Explore the difference between pre-inc & post-inc
-//2. Explore all string methods
-//3. Write a program that finds the sum of all numbers that are odd, between 100 & 500.
-//4. Define a string variable, and count the occurrences of vowels in the string.
-//5. Write a program that displays the factors of a number.
-//10: 2,5
-//15: 3,5
-//30: 3,5,10,15
+//1. int[] nums = {1,-3, 40, 50, -100, -2};
+//create a function findPositiveSum() that takes in the array and returns the sum of positive numbers.
+//2. Create a function findMAx() that returns the max value of the nums array
+//3. String[] names = {"John", "Robert", "Alice", "Vanessa", "Steven" };
+//Write a program that counts 'a' character in the whole array. print the count
+//4. Create a function called findFact() that takes in a number and returns the factorial
+//value 4: 4 x 3 x 2 x 1 = 24
+//value 5: 120
+
+//5. Find the total of a two dimensional Array. int[][] twoD = {{1,2,3,4}, {4,5,4,5}, {12,3,4,1}, {-10,4,5,3}} //4 x 4
+
+
+
